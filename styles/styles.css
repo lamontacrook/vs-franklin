@@ -29,7 +29,7 @@
   /* fonts */
   --body-font-family: bentonsans, helvetica, arial, sans-serif;
   --heading-font-family: var(--body-font-family);
-  --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
+  --fixed-font-family: bentonsans, helvetica, arial, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 22px;
@@ -45,7 +45,7 @@
   --heading-font-size-xs: 18px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 266px;
 
 }
 
@@ -228,7 +228,7 @@ main img {
   }
   
   .section > div {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: auto;
   }
 }
