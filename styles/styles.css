@@ -10,6 +10,13 @@
  * governing permissions and limitations under the License.
  */
 
+ @import url('./fonts/BentonSansBold.woff2');
+ @import url('./fonts/BentonSansBook.woff2');
+ @import url('./fonts/BentonSansLight.woff2');
+ @import url('./fonts/BentonSansMedium.woff2');
+ @import url('./fonts/BentonSansRegular.woff2');
+
+
  :root {
   /* colors */
   --link-color: #035fe6;
@@ -20,7 +27,7 @@
   --text-color: #000;
 
   /* fonts */
-  --body-font-family: 'helvetica neue', helvetica, ubuntu, roboto, noto, sans-serif;
+  --body-font-family: bentonsans, helvetica, arial, sans-serif;
   --heading-font-family: var(--body-font-family);
   --fixed-font-family: 'Roboto Mono', menlo, consolas, 'Liberation Mono', monospace;
 

@@ -37,7 +37,9 @@ header nav[aria-expanded=true] {
 @media (min-width: 900px) {
   header nav {
     display: flex;
-    justify-content: space-between;
+    
+    /* justify-content: space-between; */
+    flex-direction: column;
   }
 
   header nav[aria-expanded=true] {
@@ -49,10 +51,32 @@ header nav[aria-expanded=true] {
 header nav p {
   margin: 0;
   line-height: 1;
+  font-size: x-small;
+}
+
+header nav p > a {
+  font-size: x-small;
+}
+
+header .nav-brand > .promo > div {
+  display: flex;
+  flex-direction: row;
+}
+
+header .nav-brand > .promo > div > div {
+  padding: 5px 10px;
 }
 
 header nav a:any-link {
   color: currentcolor;
+  font-weight: lighter;
+  font-size: small;
+}
+
+header .nav-brand > .promo > div > div:nth-child(2) a {
+  border: 1px solid black;
+  border-radius: 2px;
+  padding: 5px;
 }
 
 /* hamburger */
@@ -146,7 +170,7 @@ header .nav-brand {
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 296px;
   height: auto;
 }
 
