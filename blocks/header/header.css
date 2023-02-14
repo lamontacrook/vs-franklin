@@ -19,7 +19,7 @@ header nav {
   background-color: var(--background-color);
   font-family: var(--body-font-family);
   text-align: center;
-  z-index: -1;
+  /* z-index: -1; */
   position: relative;
 }
 
@@ -224,7 +224,7 @@ header nav .nav-sections ul>li>ul>li {
     cursor: pointer;
   }
 
-  header nav .nav-sections .nav-drop::after {
+  /* header nav .nav-sections .nav-drop::after {
     content: '';
     display: inline-block;
     position: absolute;
@@ -236,7 +236,7 @@ header nav .nav-sections ul>li>ul>li {
     border: 2px solid currentcolor;
     border-radius: 0 1px 0 0;
     border-width: 2px 2px 0 0;
-  }
+  } */
 
   header nav .nav-sections .nav-drop[aria-expanded=true]::after {
     top: unset;
@@ -258,8 +258,8 @@ header nav .nav-sections ul>li>ul>li {
   }
 
   header nav .nav-sections>ul>li>ul {
-    display: none;
-    position: relative;
+    /* display: none; */
+    /* position: relative; */
   }
 
   header nav .nav-sections>ul>li[aria-expanded=true]>ul {
@@ -334,4 +334,17 @@ header .promo.pink {
 
 header .nav-brand>.promo>div>div {
   padding: 5px 10px;
+}
+
+header .flyout {
+  position: absolute;
+  top: 205px;
+  left: 0;
+  z-index: 19;
+  width: 1073px;
+  border: .2px solid;
+  height: auto;
+  background-color: #F7F7F8;
+  display: table;
+  overflow: hidden;
 }

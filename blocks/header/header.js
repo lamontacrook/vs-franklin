@@ -1,4 +1,6 @@
 import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
+import { createTag } from '../../scripts/scripts.js';
+
 
 // media query match that indicates mobile/tablet width
 const MQ = window.matchMedia('(min-width: 900px)');
@@ -53,36 +55,36 @@ function toggleAllNavSections(sections, expanded = false) {
  * @param {*} forceExpanded Optional param to force nav expand behavior when not null
  */
 function toggleMenu(nav, navSections, forceExpanded = null) {
-  const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
-  const button = nav.querySelector('.nav-hamburger button');
-  document.body.style.overflowY = (expanded || MQ.matches) ? '' : 'hidden';
-  nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-  toggleAllNavSections(navSections, expanded || MQ.matches ? 'false' : 'true');
-  button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
-  // enable nav dropdown keyboard accessibility
-  const navDrops = navSections.querySelectorAll('.nav-drop');
-  if (MQ.matches) {
-    navDrops.forEach((drop) => {
-      if (!drop.hasAttribute('tabindex')) {
-        drop.setAttribute('role', 'button');
-        drop.setAttribute('tabindex', 0);
-        drop.addEventListener('focus', focusNavSection);
-      }
-    });
-  } else {
-    navDrops.forEach((drop) => {
-      drop.removeAttribute('role');
-      drop.removeAttribute('tabindex');
-      drop.removeEventListener('focus', focusNavSection);
-    });
-  }
-  // enable menu collapse on escape keypress
-  if (!expanded || MQ.matches) {
-    // collapse menu on escape press
-    window.addEventListener('keydown', closeOnEscape);
-  } else {
-    window.removeEventListener('keydown', closeOnEscape);
-  }
+  // const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
+  // const button = nav.querySelector('.nav-hamburger button');
+  // document.body.style.overflowY = (expanded || MQ.matches) ? '' : 'hidden';
+  // nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+  // toggleAllNavSections(navSections, expanded || MQ.matches ? 'false' : 'true');
+  // button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  // // enable nav dropdown keyboard accessibility
+  // const navDrops = navSections.querySelectorAll('.nav-drop');
+  // if (MQ.matches) {
+  //   navDrops.forEach((drop) => {
+  //     if (!drop.hasAttribute('tabindex')) {
+  //       drop.setAttribute('role', 'button');
+  //       drop.setAttribute('tabindex', 0);
+  //       drop.addEventListener('focus', focusNavSection);
+  //     }
+  //   });
+  // } else {
+  //   navDrops.forEach((drop) => {
+  //     drop.removeAttribute('role');
+  //     drop.removeAttribute('tabindex');
+  //     drop.removeEventListener('focus', focusNavSection);
+  //   });
+  // }
+  // // enable menu collapse on escape keypress
+  // if (!expanded || MQ.matches) {
+  //   // collapse menu on escape press
+  //   window.addEventListener('keydown', closeOnEscape);
+  // } else {
+  //   window.removeEventListener('keydown', closeOnEscape);
+  // }
 }
 
 /**
@@ -112,15 +114,18 @@ export default async function decorate(block) {
     });
 
     const navSections = nav.querySelector('.nav-sections');
+
     if (navSections) {
       navSections.querySelectorAll(':scope > ul > li').forEach((navSection) => {
-        if (navSection.querySelector('ul')) navSection.classList.add('nav-drop');
-        navSection.addEventListener('click', () => {
-          if (MQ.matches) {
-            const expanded = navSection.getAttribute('aria-expanded') === 'true';
-            toggleAllNavSections(navSections);
-            navSection.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-          }
+        const div = createTag('div');
+        if (navSection.querySelector('ul')) {
+          // navSection.querySelector('ul').classList.add('nav-drop');
+          // navSection.querySelector('ul').classList.add('flyout')
+          // navSection.querySelector('ul').classList.add(navSection.querySelector('a').innerHTML.toLowerCase());
+        }
+        
+        navSection.addEventListener('mouseover', (e) => {
+          console.log(e.target)
         });
       });
     }

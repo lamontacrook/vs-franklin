@@ -10,14 +10,14 @@
  * governing permissions and limitations under the License.
  */
 
- @import url('./fonts/BentonSansBold.woff2');
- @import url('./fonts/BentonSansBook.woff2');
- @import url('./fonts/BentonSansLight.woff2');
- @import url('./fonts/BentonSansMedium.woff2');
- @import url('./fonts/BentonSansRegular.woff2');
+@import url('./fonts/BentonSansBold.woff2');
+@import url('./fonts/BentonSansBook.woff2');
+@import url('./fonts/BentonSansLight.woff2');
+@import url('./fonts/BentonSansMedium.woff2');
+@import url('./fonts/BentonSansRegular.woff2');
 
 
- :root {
+:root {
   /* colors */
   --link-color: #035fe6;
   --link-hover-color: #136ff6;
@@ -67,8 +67,12 @@ header {
   height: var(--nav-height);
 }
 
-h1, h2, h3,
-h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--heading-font-family);
   font-weight: 600;
   line-height: 1.25;
@@ -77,14 +81,46 @@ h4, h5, h6 {
   scroll-margin: calc(var(--nav-height) + 1em);
 }
 
-h1 { font-size: var(--heading-font-size-xxl) }
-h2 { font-size: var(--heading-font-size-xl) }
-h3 { font-size: var(--heading-font-size-l) }
-h4 { font-size: var(--heading-font-size-m) }
-h5 { font-size: var(--heading-font-size-s) }
-h6 { font-size: var(--heading-font-size-xs) }
+h1 {
+  font-size: var(--heading-font-size-xxl)
+}
 
-p, dl, ol, ul, pre, blockquote {
+h2 {
+  font-size: var(--heading-font-size-xl)
+}
+
+h3 {
+  /* font-size: var(--heading-font-size-l)  */
+  color: rgb(0, 0, 0);
+  font-feature-settings: "liga" 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  white-space: normal;
+  font-weight: 900;
+  font-family: BentonSans, Helvetica, Arial, sans-serif;
+  font-size: 1.202rem;
+  line-height: 28px;
+  letter-spacing: 0.04em;
+}
+
+h4 {
+  font-size: var(--heading-font-size-m)
+}
+
+h5 {
+  font-size: var(--heading-font-size-s)
+}
+
+h6 {
+  font-size: var(--heading-font-size-xs)
+}
+
+p,
+dl,
+ol,
+ul,
+pre,
+blockquote {
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -99,12 +135,15 @@ a:hover {
   color: var(--link-hover-color);
 }
 
-code, pre, samp {
+code,
+pre,
+samp {
   font-family: var(--fixed-font-family);
   font-size: var(--body-font-size-s);
 }
 
-code, samp {
+code,
+samp {
   padding: .125em;
 }
 
@@ -114,7 +153,8 @@ pre {
 
 /* buttons */
 
-a.button:any-link, button {
+a.button:any-link,
+button {
   font-family: var(--body-font-family);
   display: inline-block;
   box-sizing: border-box;
@@ -122,33 +162,41 @@ a.button:any-link, button {
   border: 2px solid transparent;
   padding: 5px 30px;
   text-align: center;
-  font-style: normal; 
+  font-style: normal;
   font-weight: 600;
   cursor: pointer;
   color: var(--background-color);
-  background-color: var(--link-color);
+  /* background-color: var(--link-color); */
   margin: 16px 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  border-radius: 30px;
+  /* border-radius: 30px; */
+
+  background-color: black;
+  border-radius: 5px;
 }
 
-a.button:hover, a.button:focus, button:hover, button:focus  {
+a.button:hover,
+a.button:focus,
+button:hover,
+button:focus {
   background-color: var(--link-hover-color);
   cursor: pointer;
 }
 
-button:disabled, button:disabled:hover {
+button:disabled,
+button:disabled:hover {
   background-color: var(--overlay-background-color);
   cursor: unset;
 }
 
-a.button.secondary, button.secondary {
+a.button.secondary,
+button.secondary {
   background-color: unset;
   border: 2px solid currentcolor;
   color: var(--text-color)
-} 
+}
 
 
 main input {
@@ -157,7 +205,7 @@ main input {
   max-width: 50rem;
   display: block;
   margin-bottom: 1rem;
-  padding: 0.75rem 0.6rem;    
+  padding: 0.75rem 0.6rem;
   border-radius: 0.25rem;
   box-sizing: border-box;
   border: 1px solid var(--text-color);
@@ -214,7 +262,7 @@ main img {
 @media (min-width: 600px) {
   main .section {
     padding: 64px 32px;
-  }  
+  }
 }
 
 @media (min-width: 900px) {
@@ -224,10 +272,10 @@ main img {
     --heading-font-size-l: 36px;
     --heading-font-size-m: 30px;
     --heading-font-size-s: 24px;
-    --heading-font-size-xs: 22px;  
+    --heading-font-size-xs: 22px;
   }
-  
-  .section > div {
+
+  .section>div {
     /* max-width: 1200px; */
     margin: auto;
   }
@@ -241,4 +289,18 @@ main .section[data-section-status='initialized'] {
 
 main .section.highlight {
   background-color: var(--highlight-background-color);
+}
+
+main .default-content-wrapper:nth-child(1) {
+  text-align: center;
+}
+
+main .default-content-wrapper:nth-child(1) h2 {
+  font-family: serif;
+  color: rgb(0, 0, 0);
+  font-feature-settings: "liga" 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizelegibility;
+  white-space: normal;
+  font-weight: 900;
 }
