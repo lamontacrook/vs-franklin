@@ -10,13 +10,6 @@
  * governing permissions and limitations under the License.
  */
 
-@import url('./fonts/BentonSansBold.woff2');
-@import url('./fonts/BentonSansBook.woff2');
-@import url('./fonts/BentonSansLight.woff2');
-@import url('./fonts/BentonSansMedium.woff2');
-@import url('./fonts/BentonSansRegular.woff2');
-
-
 :root {
   /* colors */
   --link-color: #035fe6;

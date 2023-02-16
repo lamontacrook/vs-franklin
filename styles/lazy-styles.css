@@ -1,1 +1,7 @@
 /* below the fold CSS goes here */
+
+@import url('./fonts/BentonSansBold.woff2');
+@import url('./fonts/BentonSansBook.woff2');
+@import url('./fonts/BentonSansLight.woff2');
+@import url('./fonts/BentonSansMedium.woff2');
+@import url('./fonts/BentonSansRegular.woff2');
