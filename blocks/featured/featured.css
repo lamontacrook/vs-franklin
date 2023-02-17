@@ -1,0 +1,13 @@
+main .featured > div {
+  display: flex;
+  flex-direction: row;
+}
+
+main .featured > div > div:nth-child(2) {
+  padding: 100px 80px;
+  width: 40%;
+}
+
+main .featured {
+  border: 1px solid black;
+}
